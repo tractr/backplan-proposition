@@ -148,6 +148,15 @@
   .erd{font-family:var(--mono);font-size:12.5px;line-height:1.7;white-space:pre;overflow:auto;
     background:var(--card-bg);border:2px solid var(--border);border-radius:var(--r);padding:18px;color:var(--ink2);box-shadow:var(--sh)}
   .note{font-size:12.5px;color:var(--muted);font-style:italic;max-width:74ch}
+  /* ideacards : idees courtes groupees par moment du cycle commercial. Pas d'etiquette
+     de prix ni de statut : ce sont des pistes, pas des lots a commander. */
+  .ideacards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+  .ideacards .card{margin:0;padding:14px 17px}
+  .ideacards h3{margin:0 0 7px;font-size:14px}
+  .ideacards ul{margin:0;padding-left:17px}
+  .ideacards li{margin:4px 0;font-size:12.5px;color:var(--ink2)}
+  .ideacards .wide{grid-column:1/-1}
+  @media(max-width:920px){.ideacards{grid-template-columns:1fr}}
   .kpicards .card{margin:0;border-top:5px solid var(--acc)}
   .kpicards .lbl{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--acc);text-transform:uppercase}
   .tiroir{border:2px solid var(--border);border-radius:var(--r);padding:16px 18px;margin:14px 0;background:var(--card-bg);box-shadow:var(--sh);display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start}
@@ -245,6 +254,7 @@
     main a{text-decoration:none}
     /* La largeur A4 passe sous le point de rupture 920px : on retablit les grilles. */
     .g2{grid-template-columns:1fr 1fr}
+    .ideacards{grid-template-columns:1fr 1fr}
     .g3{grid-template-columns:repeat(3,1fr)}
     .team{grid-template-columns:1fr 1fr}
     .quotes{grid-template-columns:1fr 1fr}
@@ -264,9 +274,10 @@
       <a href="#sec1"><span class="n">1</span>Pourquoi ce document</a>
       <a href="#sec2"><span class="n">2</span>Ce qu'on propose</a>
       <a href="#sec3"><span class="n">3</span>Par où commencer</a>
-      <a href="#sec4"><span class="n">4</span>Vos données</a>
-      <a href="#sec5"><span class="n">5</span>Ce qui vient après</a>
-      <a href="#sec6"><span class="n">6</span>TRACTR & la suite</a>
+      <a href="#sec4"><span class="n">4</span>Le champ des possibles</a>
+      <a href="#sec5"><span class="n">5</span>Vos données</a>
+      <a href="#sec6"><span class="n">6</span>Ce qui vient après</a>
+      <a href="#sec7"><span class="n">7</span>TRACTR & la suite</a>
     </nav>
     <div class="side-foot"><a href="mailto:guillaume@tractr.net">guillaume@tractr.net</a></div>
   </aside>
@@ -351,7 +362,6 @@
 
     <p><b>La seconde se choisit avec Marie-Christine</b> selon ce qui lui sert le plus vite : le brief automatique avant un rendez-vous grand compte, le compte rendu qui met à jour la fiche d'opportunité, ou la revue de pipe du lundi matin.</p>
 
-    <p class="note">D'autres automatisations viendront ensuite si celles-là tiennent leurs promesses : lecture d'un cahier des charges, première version d'une réponse commerciale, veille sur les arrêts et les projets industriels du Grand Sud-Ouest.</p>
 
     <div class="callout"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16" x2="12" y2="16"/></svg><b>Ce n'est pas un chatbot de plus :</b> un chatbot dans le navigateur oublie tout entre deux conversations et ne voit que ce qu'on lui copie-colle. Un assistant connecté lit vos outils et retient votre façon de travailler, une fois pour toutes.</div>
 
@@ -361,7 +371,56 @@
     </div></details>
 
     <!-- ===== 4 ===== -->
-    <h2 id="sec4"><span class="h2n">4</span>Vos données</h2>
+    <h2 id="sec4"><span class="h2n">4</span>Le champ des possibles</h2>
+    <p class="lead">Une fois le CRM branché, le même mécanisme se réutilise. Voilà le terrain, pas une liste de courses.</p>
+
+    <div class="ideacards">
+      <div class="card">
+        <h3>Avant un rendez-vous</h3>
+        <ul>
+          <li>Le brief d'un compte, en une page</li>
+          <li>L'historique d'un prospect</li>
+          <li>Ce qui s'est dit la dernière fois</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Après un rendez-vous</h3>
+        <ul>
+          <li>Des notes vers un compte rendu</li>
+          <li>La fiche d'opportunité à jour</li>
+          <li>La relance au bon moment</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Piloter le pipe</h3>
+        <ul>
+          <li>Le tableau de bord sans ressaisie</li>
+          <li>Ce qui a bougé, ce qui dort</li>
+          <li>Les devis restés sans réponse</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Avant-vente</h3>
+        <ul>
+          <li>Un cahier des charges en une page</li>
+          <li>Les exigences extraites une à une</li>
+          <li>Une première trame de réponse</li>
+        </ul>
+      </div>
+      <div class="card wide">
+        <h3>Veille sur vos marchés</h3>
+        <ul>
+          <li>Les arrêts de maintenance annoncés</li>
+          <li>Les projets d'investissement industriel du Grand Sud-Ouest</li>
+          <li>Les publications de vos donneurs d'ordre, et ce qui mérite un appel</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="note">Rien de tout cela n'est engagé dans la mise en route. On en construit deux, on regarde si elles tiennent leurs promesses, et on avance point par point. Les meilleures idées viennent en général de vous, pas de cette liste.</p>
+
+    <!-- ===== 5 ===== -->
+    <h2 id="sec5"><span class="h2n">5</span>Vos données</h2>
     <p class="lead">Avec Arkema, ArianeGroup, Merck et DSM Firmenich au portefeuille, la question mérite une réponse avant d'être posée.</p>
 
     <div class="card">
@@ -375,7 +434,7 @@
     <div class="callout"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><line x1="12" y1="16" x2="12" y2="16"/></svg><b>Pour situer :</b> Anthropic est certifié SOC 2 Type II, ISO/IEC 27001:2022 et ISO/IEC 42001, et cite officiellement Sanofi, Doctolib, Qonto, L'Oréal, SAP et BMW parmi ses clients européens. Détail public sur <a href="https://trust.anthropic.com" target="_blank" rel="noopener">trust.anthropic.com</a>.</div>
 
     <!-- ===== 5 ===== -->
-    <h2 id="sec5"><span class="h2n">5</span>Ce qui vient après, si ça marche</h2>
+    <h2 id="sec6"><span class="h2n">6</span>Ce qui vient après, si ça marche</h2>
     <p class="lead">Rien de ce qui suit n'est à décider aujourd'hui. C'est là pour montrer où mène le chemin.</p>
 
     <div class="tiroir"><div><div class="t">Un atelier sur le volet documentaire</div><div class="desc">Une demi-journée avec celles et ceux qui, chez vous, portent la GED, la GMAO et le reporting client, pour voir ce que vous pourriez proposer à vos industriels.</div></div><div class="price todo">à cadrer</div></div>
@@ -389,7 +448,7 @@
     <div class="callout v1"><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><b>Rien de tout cela n'est obligatoire, et on le pense.</b> À l'issue de la mise en route, soit elle a produit quelque chose de visible et on en reparle, soit non, et ça s'arrête là.</div>
 
     <!-- ===== 6 ===== -->
-    <h2 id="sec6"><span class="h2n">6</span>TRACTR, et la suite</h2>
+    <h2 id="sec7"><span class="h2n">7</span>TRACTR, et la suite</h2>
     <p class="lead">Un studio de produits numériques, fondé à Montréal en 2008, avec un bureau à Bordeaux.</p>
 
     <div class="facts">
